@@ -1,0 +1,211 @@
+#halaman
+.header{
+    padding-top: 30px;
+    width: 900px;
+}
+body{
+    width: 900px;
+    margin: 0 auto;
+}
+
+@font-face{
+    font-family: 'Playfair';
+    src: url(PlayfairDisplay-Regular.ttf);
+}
+
+@font-face{
+    font-family: 'Ubuntu';
+    src: url(Ubuntu-Regular.ttf);
+}
+#kolomisi
+.logo{
+    width: 100px;
+}
+
+.tulisan{
+    font-family: Playfair;
+    font-size: 9pt;
+    word-spacing: 2px;
+}
+nav{
+    text-align: right;
+}
+
+a{
+    color: #707070;
+    text-align: right;
+    text-decoration: none;
+    font-family: Playfair;
+    font-size: 13px;
+    padding-left: 70px;
+}
+
+.gambr1{
+    display: block;
+    margin: auto;
+    width: 900px;
+    padding-top: 10px;
+    padding-bottom: 7%;
+}
+
+div.pd{
+    width: 800px;
+    margin: 0 auto;
+}
+
+.pd1{
+    font-size: 15px;
+    font-family: Ubuntu;
+    color: #bcbbb8;
+}
+.pd2{
+    font-size: 35px;
+    font-family: Playfair;
+    color: #707070;
+    font-weight: 200;
+}
+
+p{
+    color: #707070;
+    word-spacing: 0.5px;
+}
+
+.comment{
+    padding-top: 30px;
+    font-size: 15px;
+    font-family: Ubuntu;
+    color: #bcbbb8;  
+}
+
+table{
+    width: 780px;
+}
+
+.kmplimg{
+    width: 350px;
+}
+
+td.kiri{
+    font-family: Playfair;
+    font-size: 9pt;
+    word-spacing: 2px;
+    padding-right: 20px;
+    color: #707070;
+}
+
+td.kanan{
+    font-family: Playfair;
+    font-size: 9pt;
+    word-spacing: 2px;
+    padding-left: 0px;
+    color: #707070;
+}
+
+.lifestyle1{
+    padding-top: 80px;
+    width: 780px;
+    margin: 0 auto;
+}
+
+p.subjudul{
+    font-family: Ubuntu;
+    color: #bcbbb8;  
+    font-size: 9pt;
+}
+
+h1.judul{
+    font-family: Playfair;
+    font-size: 28px;
+    color: #707070;
+    font-weight: 200;
+}
+
+p.tulisan1{
+    text-align: left;
+}
+
+.subscribe{
+    margin-top: 70px;
+    border-style: solid;
+    padding :  50px;
+    background-color: #e9e9e9;
+    border: none;
+}
+
+.h-form{
+    text-align: center;
+    font-family: Playfair; 
+    font-size: 25px;
+    font-weight: lighter;
+    padding-bottom:20px;
+}
+
+form{
+    text-align: center;
+}
+
+.email{
+    margin: 10px;
+	font-size: 10pt;
+    padding: 10px;
+    border-style: none none solid none;
+    border-color: black;
+    border-width: thin;
+	background: transparent;
+	font-family: roboto;
+    padding-right: 100px;
+    background-image: url(SAND.png);
+    background-position: right;
+    background-size: 20px;
+    background-repeat: no-repeat;
+
+}
+
+.tabel-bwh{
+    margin-bottom: 15%;
+}
+
+.load{
+    margin-left: 380px;
+    margin-right: 380px;
+    text-align: center;
+    font-family: Playfair;
+    border-style: solid;
+    padding: 15px;
+    border-width: thin;
+    color: #707070;
+    font-size: 12pt;
+}
+
+.contact{
+    width: 880px;
+    margin-top: 15%;
+    background-color: #bcbbb8; 
+    padding: 25px;   
+    border: none;
+}
+
+.bottoml{
+    padding-left: 40px;
+    font-family: Playfair;
+    font-size: 10pt;
+}
+
+.lefbot{
+    padding-left: 10px;
+}
+
+.bottomr{
+    text-align: right;
+    padding-right: 40px;
+    font-family: Playfair;
+    font-size: 10pt;
+}
+
+.follow{
+    padding-right: 10px;
+}
+
+.logo{
+    padding-left: 5px;
+}
