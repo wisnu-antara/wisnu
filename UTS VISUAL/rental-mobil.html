@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <h1>Rental Mobil</h1>
+    <div id="mobil"></div>
+    <p>Daftar mobil yang disewakan:</p>
+    <table>
+        <tr>
+            <td><img src="D:\visual\UTS VISUAL\gambarpng\New_Avanza.png" width="280px" height="250px"></td>
+            <td><br><br><img src="D:\visual\UTS VISUAL\gambarpng\xenia.jpg" width="280px" height="250px"></td>
+            <td><img src="D:\visual\UTS VISUAL\gambarpng\brio.jpg" width="280px" height="250px"></td>
+        </tr>
+        <tr>
+            <td>Toyota Avanza</td>
+            <td>Daihatsu xenia</td>
+            <td>Honda Brio</td>
+        </tr>
+    </table><br>
+    <p>HARGA SEWA MOBIL SUDAH TERCANTUM DISINI, PERUBAHAN DAPAT BERLAKU SEWAKTU-WAKTU</p>
+    <script>
+        const electron = require("electron");
+        const {
+            ipcRenderer
+        } = electron;
+        ipcRenderer.send("appointment:request:rental");
+
+        ipcRenderer.on("appointment:response:mobil", (event, appointments) => {
+            const mobilDiv = document.getElementById("mobil");
+            appointments.forEach(appointment => {
+                const appointmentDiv = document.createElement("div");
+
+                const nameParagraph = document.createElement("p");
+                nameParagraph.innerHTML = `Nama Peminjam: ${appointment.name}`;
+
+                const mobilParagraph = document.createElement("p");
+                mobilParagraph.innerHTML = `Pilihan Mobil: ${appointment.mobil}`;
+
+                const datepeminjamanParagraph = document.createElement("p");
+                datepeminjamanParagraph.innerHTML = `Tanggal Pinjam: ${appointment.datepeminjaman}`;
+
+                const waktupeminjamanParagraph = document.createElement("p");
+                waktupeminjamanParagraph.innerHTML = `Waktu Pinjam: ${appointment.waktupeminjaman}`;
+
+                const timekembaliParagraph = document.createElement("p");
+                timekembaliParagraph.innerHTML = `Waktu Pengembalian: ${appointment.timekembali}`;
+
+                const timedelayParagraph = document.createElement("p");
+                timedelayParagraph.innerHTML = `Total Durasi: ${appointment.timedelay}`;
+
+                const biayaParagraph = document.createElement("p");
+                biayaParagraph.innerHTML = `Biaya per Jam: ${appointment.biaya}`;
+
+                const totalbayarParagraph = document.createElement("p");
+                totalbayarParagraph.innerHTML = `Total Bayar: ${appointment.totalbayar}`;
+
+                const doneButton = document.createElement("button");
+                doneButton.innerHTML = "Done";
+                doneButton.disabled = appointment.done ? true : false;
+                doneButton.onclick = () => done(appointment.id);
+
+                const hr = document.createElement("hr");
+
+                appointmentDiv.appendChild(nameParagraph);
+                appointmentDiv.appendChild(mobilParagraph);
+                appointmentDiv.appendChild(datepeminjamanParagraph);
+                appointmentDiv.appendChild(waktupeminjamanParagraph);
+                appointmentDiv.appendChild(timekembaliParagraph);
+                appointmentDiv.appendChild(timedelayParagraph);
+                appointmentDiv.appendChild(biayaParagraph);
+                appointmentDiv.appendChild(totalbayarParagraph);
+                appointmentDiv.appendChild(doneParagraph);
+                appointmentDiv.appendChild(hr);
+
+                historyDiv.append(appointmentDiv);
+
+            });
+        });
+        const done = id => {
+            ipcRenderer.send("appointment:done", id);
+        };
+    </script>
+</body>
+
+</html>
